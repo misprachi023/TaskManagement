@@ -19,7 +19,7 @@ const DashboardPage = () => {
           'Content-Type': 'application/json' 
         };
         
-        const { data } = await axios.get('https://taskmanagementapp-hqnr.onrender.com/api/boards', { headers });
+        const { data } = await axios.get('https://taskmanagement-3-93ed.onrender.com/api/boards', { headers });
         setBoards(data);
         setIsLoading(false);
       } catch (err) {
@@ -38,7 +38,7 @@ const DashboardPage = () => {
         'Content-Type': 'application/json' 
       };
       
-      const { data } = await axios.post('https://taskmanagementapp-hqnr.onrender.com/api/boards', { name: boardName }, { headers });
+      const { data } = await axios.post('https://taskmanagement-3-93ed.onrender.com/api/boards', { name: boardName }, { headers });
       setBoards([...boards, data]);
       setBoardName('');
     } catch (err) {
@@ -54,7 +54,7 @@ const DashboardPage = () => {
         Authorization: `Bearer ${authToken}`,
         'Content-Type': 'application/json'
       };
-      const { data } = await axios.get(`https://taskmanagementapp-hqnr.onrender.com/api/tasks/${boardId}`, { headers });
+      const { data } = await axios.get(`https://taskmanagement-3-93ed.onrender.com/api/tasks/${boardId}`, { headers });
       setTasks(data);
     } catch (err) {
       console.error(err);
@@ -69,7 +69,7 @@ const DashboardPage = () => {
         Authorization: `Bearer ${authToken}`,
         'Content-Type': 'application/json' 
       };
-      const { data } = await axios.post("https://taskmanagementapp-hqnr.onrender.com/api/tasks", {
+      const { data } = await axios.post("https://taskmanagement-3-93ed.onrender.com/api/tasks", {
         title: taskTitle,
         boardId: selectedBoard,
       }, { headers });
@@ -87,7 +87,7 @@ const DashboardPage = () => {
         Authorization: `Bearer ${authToken}`,
         'Content-Type': 'application/json'
       };
-      await axios.delete(`https://taskmanagementapp-hqnr.onrender.com/api/tasks/${taskId}`, { headers });
+      await axios.delete(`https://taskmanagement-3-93ed.onrender.com/api/tasks/${taskId}`, { headers });
       setTasks(tasks.filter((task) => task._id !== taskId));
     } catch (err) {
       console.error(err);

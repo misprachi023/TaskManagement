@@ -10,7 +10,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("https://taskmanagementapp-hqnr.onrender.com/api/users/login", {
+      const { data } = await axios.post("https://taskmanagement-3-93ed.onrender.com/api/users/login", {
         email,
         password,
       });

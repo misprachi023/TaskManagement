@@ -11,7 +11,7 @@ const RegisterPage = () => {
 		e.preventDefault();
 		try {
             console.log(username, email, password)
-			const { data } = await axios.post("https://taskmanagementapp-hqnr.onrender.com/api/users/register", {
+			const { data } = await axios.post("https://taskmanagement-3-93ed.onrender.com/api/users/register", {
 				username,
 				email,
 				password,
